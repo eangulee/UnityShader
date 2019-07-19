@@ -13,7 +13,9 @@ Shader "Custom/PostEffect/ColorAdjustEffect"
 	{
 		Pass
 		{				
-			ZTest Always Cull Off ZWrite Off
+			ZTest Always
+			Cull Back
+			ZWrite Off
 			
 			CGPROGRAM
 			sampler2D _MainTex;

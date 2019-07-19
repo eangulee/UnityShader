@@ -35,7 +35,6 @@ Shader "Custom/PostEffect/RadialBlurShader"
 		Pass
 		{
 			ZTest Always
-			Cull Off
 			ZWrite Off
 			Fog{ Mode off }
  

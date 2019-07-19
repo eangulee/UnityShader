@@ -46,7 +46,7 @@
         ENDCG*/
         
         ZTest Always
-        Cull Off
+        // Cull Off
         ZWrite Off
         
         Pass {

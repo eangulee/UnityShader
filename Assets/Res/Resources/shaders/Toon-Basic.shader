@@ -10,7 +10,7 @@ Shader "Toon/Basic" {
         Tags { "RenderType"="Opaque" } //渲染不透明物体
         Pass {
             Name "BASE" //pass的名字，这个后续的shader会用到
-            Cull Off  //双面渲染
+            // Cull Off  //双面渲染
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag

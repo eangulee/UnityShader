@@ -12,7 +12,6 @@ Shader "Custom/GeometryStab"
 		LOD 100 
 		Pass
 		{
-		Cull Off
 			CGPROGRAM
 			#pragma target 4.0
 			#pragma vertex vert
