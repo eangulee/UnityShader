@@ -22,7 +22,7 @@ public class Deformation : PostEffectBase
     // Start is called before the first frame update
     void Start()
     {
-
+        Debug.Log(_originalProjection);
     }
 
     // Update is called once per frame
@@ -30,7 +30,7 @@ public class Deformation : PostEffectBase
     {
         _p = _originalProjection;
         _p.m01 += Mathf.Sin(Time.time * widthFactor);
-        _p.m11 += Mathf.Sin(Time.time * heightFactor);
+        _p.m11 += Mathf.Sin(Time.time * heightFactor) / 2;
         //_p.m22 += Mathf.Sin(Time.time * heightFactor) * 0.1F;
         Camera.main.projectionMatrix = _p;
     }

@@ -10,7 +10,7 @@ public class Fade : PostEffectBase
     private float _time;
     void OnDisable()
     {
-       
+
     }
 
     private void OnEnable()
