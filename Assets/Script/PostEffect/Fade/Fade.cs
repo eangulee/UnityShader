@@ -16,6 +16,7 @@ public class Fade : PostEffectBase
     private void OnEnable()
     {
         _time = Time.time;
+        Debug.Log(Camera.main.projectionMatrix);
     }
 
     void OnRenderImage(RenderTexture src, RenderTexture dest)
