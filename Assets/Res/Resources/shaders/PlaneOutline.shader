@@ -16,7 +16,7 @@ Properties {
     _MainTex ("Base (RGB)", 2D) = "white" {}
     _Color ("Color", Color) = (1,1,1,1)
     //------------关键代码---------
-    _Expand ("Thickness",Range(1,1.5)) = 1.1
+    _Expand ("Thickness",Range(0,1.5)) = 0.1
     _OutlineCol ("Outline Color", Color) = (0,1,0,1)
     //------------关键代码---------
 }
@@ -115,7 +115,10 @@ SubShader {
         v2f vert (appdata v)
         {
             v2f o;
-            v.vertex.xyz *= _Expand;
+            float3 dir = v.vertex.xyz;
+            dir = normalize(dir);
+            float dis = 1;//length(v.vertex.xyz);
+            v.vertex.xyz += dis * dir *_Expand;
             o.vertex = UnityObjectToClipPos(v.vertex);
             return o;
         }
