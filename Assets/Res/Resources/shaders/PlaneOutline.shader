@@ -109,8 +109,6 @@ SubShader {
             float4 vertex : SV_POSITION;
         };
 
-        sampler2D _MainTex;
-        float4 _MainTex_ST;
         fixed4 _OutlineCol;
         float _Expand;
         //https://gamedev.stackexchange.com/questions/156902/how-can-i-create-an-outline-shader-for-a-plane
