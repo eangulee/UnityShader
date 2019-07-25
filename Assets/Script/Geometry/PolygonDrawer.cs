@@ -9,12 +9,11 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class PolygonDrawer : MonoBehaviour
 {
-    public Material material;
-    public Transform[] vertices;
+    public Shader shader;
+    public Vector3[] vertices;
     private MeshRenderer mRenderer;
     private MeshFilter mFilter;
-    public UnityOutlineFX unityOutlineFX;
-
+    //public UnityOutlineFX unityOutlineFX;
     void Start()
     {
         Draw();
@@ -32,7 +31,7 @@ public class PolygonDrawer : MonoBehaviour
         Vector3[] vertices3D = new Vector3[vertices.Length];
         for (int i = 0; i < vertices.Length; i++)
         {
-            Vector3 vertice = vertices[i].localPosition;
+            Vector3 vertice = vertices[i];
             vertices2D[i] = new Vector2(vertice.x, vertice.y);
             vertices3D[i] = vertice;
         }
@@ -48,12 +47,13 @@ public class PolygonDrawer : MonoBehaviour
         {
             mRenderer = gameObject.GetOrAddComponent<MeshRenderer>();
         }
-        mRenderer.material = material;
+        mRenderer.material = new Material(shader);
         if (mFilter == null)
         {
             mFilter = gameObject.GetOrAddComponent<MeshFilter>();
         }
+        mesh.RecalculateNormals();        
         mFilter.mesh = mesh;
-        unityOutlineFX.AddRenderers(new List<Renderer>() { mRenderer });
+        //unityOutlineFX.AddRenderers(new List<Renderer>() { mRenderer });
     }
 }
