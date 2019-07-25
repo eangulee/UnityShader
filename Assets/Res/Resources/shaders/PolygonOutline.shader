@@ -13,8 +13,7 @@
 
 Shader "Custom/PolygonOutline" {
 Properties {
-    _Expand ("Thickness",Range(0,1.5)) = 0.1
-    _OutlineCol ("Outline Color", Color) = (0,1,0,1)
+    _OutlineCol ("Outline Color", Color) = (1,0.5,0,1)
 }
 
 SubShader {
@@ -47,15 +46,9 @@ SubShader {
         };
 
         fixed4 _OutlineCol;
-        float _Expand;
-        //https://gamedev.stackexchange.com/questions/156902/how-can-i-create-an-outline-shader-for-a-plane
         v2f vert (appdata v)
         {
             v2f o;
-            float3 dir = v.vertex.xyz;
-            dir = normalize(dir);
-            float dis = 1;//length(v.vertex.xyz);
-            v.vertex.xyz += dis * dir *_Expand;
             o.vertex = UnityObjectToClipPos(v.vertex);
             return o;
         }
@@ -66,6 +59,5 @@ SubShader {
         }
     ENDCG
     }
-    //------------关键代码---------
 }
 }
