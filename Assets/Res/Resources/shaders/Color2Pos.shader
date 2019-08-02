@@ -22,18 +22,27 @@ SubShader {
 
             struct v2f {
                 float4 vertex : SV_POSITION;
-                float4 uv: TEXCOORD0;
+                float2 uv: TEXCOORD0;
                 float4 color:TEXCOORD1;
             };
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
+            float4 _MainTex_TexelSize;
 
             v2f vert (appdata_t v)
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
+                //当有多个RenderTarget时，需要自己处理UV翻转问题
+            #if UNITY_UV_STARTS_AT_TOP //处于DX
+                if(_MainTex_TexelSize.y < 0)
+                    o.uv = float2(v.uv.x, 1-v.uv.y);
+                else
+                    o.uv = v.uv;
+            #else
                 o.uv = v.uv;
+            #endif
                 o.color = (mul(UNITY_MATRIX_M,v.vertex) * 0.1 + 1) * 0.5;
                 return o;
             }
