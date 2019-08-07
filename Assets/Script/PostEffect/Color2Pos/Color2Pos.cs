@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 将顶点转换为颜色输出为rt，再去取rt上像素的颜色，转换为世界顶点的位置
+/// </summary>
 public class Color2Pos : PostEffectBase
 {
     public Camera depthCam;
@@ -38,7 +41,7 @@ public class Color2Pos : PostEffectBase
         material.SetTexture("_MainTex", depthTexture);
         Color color = texture2D.GetPixel(width / 2, height / 2);
         Vector3 vector = new Vector3((color.r * 2 - 1) * 10, (color.g * 2 - 1) * 10, (color.b * 2 - 1) * 10);
-        vector.z += 0.5f;
+        //vector.z += 0.5f;
         Debug.Log(vector);
     }
 

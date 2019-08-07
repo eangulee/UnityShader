@@ -16,6 +16,12 @@ public class DepthGrayscale : PostEffectBase
         }
     }
 
+    //private void OnPreRender()
+    //{
+    //    mCamera.RenderWithShader(Shader.Find("Custom/PostEffect/CopyDepth"), "RenderType");
+    //}
+
+
     void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
         if (null != Material)
