@@ -1,6 +1,6 @@
 // Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
-//用于深度摄像机替换透明和不透明的渲染shader，暂无用处
+//用于深度摄像机替换透明和不透明的渲染shader
 Shader "Custom/PostEffect/CopyDepth" {
 
 SubShader{
@@ -27,7 +27,8 @@ SubShader{
 		fixed4 frag(v2f i) : SV_Target
 		{
 			//clip(_Color.a-0.01);
-			return EncodeDepthNormal(i.nz.w, i.nz.xyz);
+			// return EncodeDepthNormal(i.nz.w, i.nz.xyz);
+		    return EncodeFloatRGBA(i.nz.w);
 		}
 		ENDCG
 		}
@@ -59,7 +60,7 @@ SubShader{
 		fixed4 frag(v2f i) : SV_Target
 		{
 			// return EncodeDepthNormal(i.nz.w, i.nz.xyz);
-			return fixed4(1.0,0.0,0.0,1.0);
+		    return EncodeFloatRGBA(i.nz.w);
 		}
 		ENDCG
 		}

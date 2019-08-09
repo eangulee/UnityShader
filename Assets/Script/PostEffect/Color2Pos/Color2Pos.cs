@@ -7,8 +7,12 @@ using UnityEngine;
 /// </summary>
 public class Color2Pos : PostEffectBase
 {
+    public delegate void PickPositionHandler(Vector3 vector);
+    public PickPositionHandler pickPositionHandler;
+
     public Camera depthCam;
     private RenderTexture depthTexture;
+    private Texture2D texture2D;
     public Material material;
     void Start()
     {
@@ -17,6 +21,7 @@ public class Color2Pos : PostEffectBase
 
     private void OnPreRender()
     {
+        if (depthCam == null) return;
         if (depthTexture)
         {
             RenderTexture.ReleaseTemporary(depthTexture);
@@ -26,23 +31,29 @@ public class Color2Pos : PostEffectBase
         depthTexture = RenderTexture.GetTemporary(Camera.main.pixelWidth, Camera.main.pixelHeight, 32, RenderTextureFormat.ARGB32);
         depthCam.backgroundColor = new Color(0, 0, 0, 0);
         depthCam.clearFlags = CameraClearFlags.SolidColor;
-        depthCam.depthTextureMode = DepthTextureMode.Depth;
+        //depthCam.depthTextureMode = DepthTextureMode.Depth;
         depthCam.targetTexture = depthTexture;
         depthCam.RenderWithShader(shader, "RenderType");
 
         int width = depthTexture.width;
         int height = depthTexture.height;
-        Texture2D texture2D = new Texture2D(width, height, TextureFormat.ARGB32, false);
+        texture2D = new Texture2D(width, height, TextureFormat.ARGB32, false);
         RenderTexture temp = RenderTexture.active;
         RenderTexture.active = depthTexture;
         texture2D.ReadPixels(new Rect(0, 0, width, height), 0, 0);
         texture2D.Apply();
         RenderTexture.active = temp;
-        material.SetTexture("_MainTex", depthTexture);
         Color color = texture2D.GetPixel(width / 2, height / 2);
-        Vector3 vector = new Vector3((color.r * 2 - 1) * 10, (color.g * 2 - 1) * 10, (color.b * 2 - 1) * 10);
-        //vector.z += 0.5f;
-        Debug.Log(vector);
+        Vector3 w = new Vector3(color.r, color.g, color.b);
+        float l = color.a * 100f;
+        w.x = (w.x - 0.5f) * 2 * l;
+        w.y = (w.y - 0.5f) * 2 * l;
+        w.z = (w.z - 0.5f) * 2 * l;
+        Debug.Log(w);
+
+        if (pickPositionHandler != null)
+            pickPositionHandler(w);
+        material.SetTexture("_MainTex", texture2D);
     }
 
     //void OnRenderImage(RenderTexture source, RenderTexture destination)
