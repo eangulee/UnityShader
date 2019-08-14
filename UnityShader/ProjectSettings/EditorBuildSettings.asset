@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Color2Pos.unity
+    guid: f4800dd82ab6d9743b912938adfd5f85
   m_configObjects: {}
