@@ -19,7 +19,7 @@ Shader "Custom/WaterWave Effect"
 	fixed4 frag(v2f_img i) : SV_Target
 	{
 		//DX下纹理坐标反向问题
-		#if UNITY_UV_STARTS_AT_TOP
+		#if UNITY_UV_STARTS_AT_TOP//区分平台
 		if (_MainTex_TexelSize.y < 0)
 			_startPos.y = 1 - _startPos.y;
 		#endif
