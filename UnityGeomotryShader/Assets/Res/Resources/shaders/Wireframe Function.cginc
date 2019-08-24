@@ -68,7 +68,7 @@ void geom(triangle v2g i[3], inout TriangleStream<g2f> triangleStream)
 	// divided by 2.  However we can avoid dividing our area/base by 2
 	// since our cross product will already be double our area.
 	float area = abs(edge1.x * edge2.y - edge1.y * edge2.x);
-	float wireThickness = 800 - _WireThickness;
+	float wireThickness = 800 - _WireThickness;//经验系数（不清楚怎么来的，可能是配出来的）
 	int maxIndex = 0;
 
 	#if ENABLE_DRAWQUAD
