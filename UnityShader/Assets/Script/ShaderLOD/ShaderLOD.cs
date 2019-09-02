@@ -10,13 +10,14 @@ public class ShaderLOD : MonoBehaviour
     void Start()
     {
         //Shader.globalMaximumLOD = LOD_value;
+        Debug.Log(Shader.globalMaximumLOD + "," + int.MaxValue);
         Debug.Log(this.shader.maximumLOD);
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        // 当前这个shader最大的LOD_value;
-        this.shader.maximumLOD = this.LOD_value;//关联的节点可以直接使用和改变
-    }
+    //void Update()
+    //{
+    //    // 当前这个shader最大的LOD_value;
+    //    this.shader.maximumLOD = this.LOD_value;//关联的节点可以直接使用和改变
+    //}
 }

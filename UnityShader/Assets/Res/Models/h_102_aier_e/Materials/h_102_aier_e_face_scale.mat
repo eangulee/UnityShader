@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: h_102_aier_e_face
-  m_Shader: {fileID: 4800000, guid: b48c64b6ce256ad42a85a8345fa0931f, type: 3}
+  m_Name: h_102_aier_e_face_scale
+  m_Shader: {fileID: 4800000, guid: e139bbc001d0dfd47922d8b62a936b6a, type: 3}
   m_ShaderKeywords: BODY_OFF CLIP_POSITION_OFF
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
@@ -80,6 +80,7 @@ Material:
     - _Parallax: 0.02
     - _RimLight: 1
     - _RimPower: 3
+    - _Scale: 2
     - _SrcBlend: 1
     - _UVSec: 0
     - _YLowest: 0
