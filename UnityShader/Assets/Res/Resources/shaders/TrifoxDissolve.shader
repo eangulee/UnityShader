@@ -1,5 +1,7 @@
-﻿//利用
-Shader "Kaima/Dissolve/Trifox"
+﻿//利用顶点到相机的距离小于角色到相机的距离来判断是否遮挡，
+//通过计算顶点在屏幕空间的坐标来采样噪声图来实现溶解效果，
+//同时使用一个遮罩来指定溶解区域
+Shader "Custom/Dissolve/Trifox"
 {
 	Properties
 	{
