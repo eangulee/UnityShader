@@ -33,6 +33,10 @@ Shader "Custom/OutLighting"  //Shader文件索引路径
             ReadMask [_StencilReadMask]
             WriteMask [_StencilWriteMask]
         }
+
+        ZWrite On
+        ZTest LEqual
+
         Pass //通道1 用于给物体贴图、填色
         {
             Name "PlaneBase"
@@ -40,11 +44,11 @@ Shader "Custom/OutLighting"  //Shader文件索引路径
             Cull Back
             //CG程序开始
             CGPROGRAM
-//声明顶点着色器函数为vert
-#pragma vertex vert
-//声明片段着色器函数为frag
-#pragma fragment frag
-#include "UnityCG.cginc"
+            //声明顶点着色器函数为vert
+            #pragma vertex vert
+            //声明片段着色器函数为frag
+            #pragma fragment frag
+            #include "UnityCG.cginc"
             //函数可能用到的参数
             uniform sampler2D _MainTex;
             uniform float4 _MainTex_ST;
@@ -101,9 +105,9 @@ Shader "Custom/OutLighting"  //Shader文件索引路径
             Blend SrcAlpha One 
 
             CGPROGRAM
-#pragma vertex vert
-#pragma fragment frag
-#include "UnityCG.cginc"
+            #pragma vertex vert
+            #pragma fragment frag
+            #include "UnityCG.cginc"
             uniform float4 _Color;
             uniform float4 _AtmoColor;
             uniform float _Size;
