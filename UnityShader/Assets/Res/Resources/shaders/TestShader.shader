@@ -12,11 +12,14 @@ Properties {
 }
 
 SubShader {
-    Tags {"Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent"}
+    // Tags {"Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent"}
+    Tags {"IgnoreProjector"="True" "RenderType"="Opaque"}
     LOD 100
 
-    ZWrite Off
-    Blend SrcAlpha OneMinusSrcAlpha
+    // ZWrite Off
+    // ZTest Always
+    // Blend SrcAlpha OneMinusSrcAlpha
+    Blend One Zero
 
     Pass {
         CGPROGRAM
@@ -52,17 +55,17 @@ SubShader {
                 UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.texcoord = TRANSFORM_TEX(v.texcoord, _MainTex);
-                o.color = float4(UNITY_MATRIX_V[2].xyz,1.0);
+                // o.color = float4(UNITY_MATRIX_V[2].xyz,1.0);
                 UNITY_TRANSFER_FOG(o,o.vertex);
                 return o;
             }
 
             fixed4 frag (v2f i) : SV_Target
             {
-                // fixed4 col = tex2D(_MainTex, i.texcoord) * _Color;
+                fixed4 col = tex2D(_MainTex, i.texcoord) * _Color;
                 // UNITY_APPLY_FOG(i.fogCoord, col);
-                // return col;
-                return i.color;
+                return col;
+                // return i.color;
             }
         ENDCG
     }
