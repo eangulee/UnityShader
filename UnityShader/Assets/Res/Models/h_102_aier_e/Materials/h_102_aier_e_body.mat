@@ -8,8 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: h_102_aier_e_body
-  m_Shader: {fileID: 4800000, guid: b48c64b6ce256ad42a85a8345fa0931f, type: 3}
-  m_ShaderKeywords: BODY_ON CLIP_POSITION_OFF
+  m_Shader: {fileID: 4800000, guid: 24585cc7061cb214a822247547cae213, type: 3}
+  m_ShaderKeywords: BODY_ON CLIP_POSITION_OFF RIMLIGHT_OFF
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -78,7 +78,7 @@ Material:
     - _OcclusionStrength: 1
     - _Outline: 0.005
     - _Parallax: 0.02
-    - _RimLight: 1
+    - _RimLight: 0
     - _RimPower: 3
     - _SrcBlend: 1
     - _UVSec: 0

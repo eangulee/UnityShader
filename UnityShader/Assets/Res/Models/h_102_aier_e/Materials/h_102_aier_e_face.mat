@@ -8,8 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: h_102_aier_e_face
-  m_Shader: {fileID: 4800000, guid: b48c64b6ce256ad42a85a8345fa0931f, type: 3}
-  m_ShaderKeywords: BODY_OFF CLIP_POSITION_OFF
+  m_Shader: {fileID: 4800000, guid: 24585cc7061cb214a822247547cae213, type: 3}
+  m_ShaderKeywords: BODY_OFF CLIP_POSITION_OFF RIMLIGHT_OFF
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -78,7 +78,8 @@ Material:
     - _OcclusionStrength: 1
     - _Outline: 0.005
     - _Parallax: 0.02
-    - _RimLight: 1
+    - _RimIntensity: 1
+    - _RimLight: 0
     - _RimPower: 3
     - _SrcBlend: 1
     - _UVSec: 0
@@ -88,5 +89,6 @@ Material:
     - _Color: {r: 0.9411765, g: 0.9411765, b: 0.9411765, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _LightPos: {r: -1, g: 1, b: 1, a: 1}
+    - _MainColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimColor: {r: 0.27450982, g: 0.27450982, b: 0.6862745, a: 1}
