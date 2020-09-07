@@ -2,7 +2,7 @@
 
 无法显示图片的参考[完美解决github访问速度慢、图片无法显示问题](https://www.jianshu.com/p/58c4a3edb668)
 
-### Shader Tags RenderType 使用示例.png
+### Shader Tags RenderType 使用示例
 
 ![image](https://github.com/eangulee/UnityShader/blob/master/UnityShader/imgs/Shader%20Tags%20RenderType%20%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B.png)
 
