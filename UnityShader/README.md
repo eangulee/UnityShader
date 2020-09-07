@@ -146,3 +146,5 @@
 ### 几何着色器实现草效果_GeometryGrass
 
 ![image](https://github.com/eangulee/UnityShader/blob/master/UnityShader/imgs/%E5%87%A0%E4%BD%95%E7%9D%80%E8%89%B2%E5%99%A8%E5%AE%9E%E7%8E%B0%E8%8D%89%E6%95%88%E6%9E%9C_GeometryGrass.png)
+
+![image](https://github.com/eangulee/UnityShader/blob/master/UnityShader/imgs/%E5%87%A0%E4%BD%95%E7%9D%80%E8%89%B2%E5%99%A8%E4%B9%8B%E8%8D%89%E5%9C%B0%E6%95%88%E6%9E%9C.gif)
