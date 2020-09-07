@@ -94,8 +94,9 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
+    m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -167,6 +168,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -178,6 +180,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -237,8 +240,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 349930699}
   m_Enabled: 1
-  serializedVersion: 9
+  serializedVersion: 10
   m_Type: 1
+  m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
@@ -310,10 +314,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 9026750679363954228, guid: 862fbd9d8dab5024fb31f0cdb4d341e9,
+    - target: {fileID: 735548583155631319, guid: 862fbd9d8dab5024fb31f0cdb4d341e9,
         type: 3}
-      propertyPath: m_Name
-      value: description_root
+      propertyPath: m_Text
+      value: "\u5C4F\u5E55\u540E\u5904\u7406\u4E4B\u4EAE\u5EA6\u3001\u9971\u548C\u5EA6\u3001\u5BF9\u6BD4\u5EA6\u8C03\u8282"
+      objectReference: {fileID: 0}
+    - target: {fileID: 735548583155631319, guid: 862fbd9d8dab5024fb31f0cdb4d341e9,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4533916006448442630, guid: 862fbd9d8dab5024fb31f0cdb4d341e9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 5161805316184757630, guid: 862fbd9d8dab5024fb31f0cdb4d341e9,
         type: 3}
@@ -375,10 +389,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 735548583155631319, guid: 862fbd9d8dab5024fb31f0cdb4d341e9,
+    - target: {fileID: 9026750679363954228, guid: 862fbd9d8dab5024fb31f0cdb4d341e9,
         type: 3}
-      propertyPath: m_Text
-      value: "\u5C4F\u5E55\u540E\u5904\u7406\u4E4B\u4EAE\u5EA6\u3001\u9971\u548C\u5EA6\u3001\u5BF9\u6BD4\u5EA6\u8C03\u8282"
+      propertyPath: m_Name
+      value: description_root
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 862fbd9d8dab5024fb31f0cdb4d341e9, type: 3}
@@ -479,9 +493,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: c7f63731c88dcee44a17e897d1f6d313, type: 3}
-  brightness: 1.4
-  contrast: 0.78
-  saturation: 0.12
+  brightness: 0.95
+  contrast: 0.68
+  saturation: 0.95
 --- !u!1001 &1822822664
 PrefabInstance:
   m_ObjectHideFlags: 0

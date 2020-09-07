@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: multi_compile
   m_Shader: {fileID: 4800000, guid: b9173e93582b41a4fa792944ae604c73, type: 3}
-  m_ShaderKeywords: TEST_4
+  m_ShaderKeywords: TEST_2 TEST_4
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -70,11 +70,12 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _TEST_2: 0
+    - _TEST_2: 1
+    - _TEST_4: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _AColor: {r: 0.330544, g: 1, b: 0, a: 1}
+    - _AColor: {r: 0.32941175, g: 1, b: 0, a: 1}
     - _BColor: {r: 1, g: 0, b: 0, a: 1}
     - _Color: {r: 1, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
