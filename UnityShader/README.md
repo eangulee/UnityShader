@@ -74,7 +74,7 @@
 
 ![image](https://github.com/eangulee/UnityShader/blob/master/UnityShader/imgs/%E8%BE%B9%E7%BC%98%E5%8F%91%E5%85%89RimLighting.png)
 
-##屏幕后处理
+## 屏幕后处理
 
 ### 基于法线的双边滤波_BilateralNormalFilter
 
