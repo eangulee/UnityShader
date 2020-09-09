@@ -40,7 +40,7 @@
 
 ### 正弦波遮罩效果
 
-https://github.com/eangulee/UnityShader/blob/master/UnityShader/imgs/%E6%AD%A3%E5%BC%A6%E6%B3%A2%E9%81%AE%E7%BD%A9.gif
+![image](https://github.com/eangulee/UnityShader/blob/master/UnityShader/imgs/%E6%AD%A3%E5%BC%A6%E6%B3%A2%E9%81%AE%E7%BD%A9.gif)
 
 ### X射线透视效果_XRay
 
