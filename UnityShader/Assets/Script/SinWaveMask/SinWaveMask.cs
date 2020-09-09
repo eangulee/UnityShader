@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [ExecuteInEditMode]
-public class SinWave : MonoBehaviour
+public class SinWaveMask : MonoBehaviour
 {
     public Graphic graphic;
     private Material material;
