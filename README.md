@@ -38,6 +38,10 @@
 
 ![image](https://github.com/eangulee/UnityShader/blob/master/UnityShader/imgs/UI%20%E6%B5%81%E5%85%89%E6%89%AB%E6%8F%8F%E6%95%88%E6%9E%9C.gif)
 
+### 正弦波遮罩效果
+
+![image](https://github.com/eangulee/UnityShader/blob/master/UnityShader/imgs/%E6%AD%A3%E5%BC%A6%E6%B3%A2%E9%81%AE%E7%BD%A9.gif)
+
 ### X射线透视效果_XRay
 
 ![image](https://github.com/eangulee/UnityShader/blob/master/UnityShader/imgs/X%E5%B0%84%E7%BA%BF%E9%80%8F%E8%A7%86%E6%95%88%E6%9E%9C_XRay.png)
