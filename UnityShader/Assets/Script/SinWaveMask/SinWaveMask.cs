@@ -26,7 +26,7 @@ public class SinWaveMask : MonoBehaviour
             offset += Time.deltaTime * speed;
             material.SetFloat("_Offset",offset);
             if (offset > 1)
-                break;
+                offset = 0f;
         }
     }
 }

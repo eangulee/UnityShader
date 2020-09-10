@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: sinwave
+  m_Name: sinWaveMask
   m_Shader: {fileID: 4800000, guid: 9a3f96fbcf613064cab0d0742707782e, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4

@@ -38,49 +38,6 @@
             sampler2D _MainTex;
             float4 _MainTex_ST;
             float4 _Color;
-
-            v2f vert (appdata v)
-            {
-                v2f o;
-                o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
-                return o;
-            }
-
-            fixed4 frag (v2f i) : SV_Target
-            {
-                // sample the texture
-                fixed4 col = tex2D(_MainTex, i.uv);
-
-                col *= _Color;
-
-                return col;
-            }
-            ENDCG
-        }
-
-        Pass
-        {
-            CGPROGRAM
-            #pragma vertex vert
-            #pragma fragment frag
-
-            #include "UnityCG.cginc"
-
-            struct appdata
-            {
-                float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
-            };
-
-            struct v2f
-            {
-                float2 uv : TEXCOORD0;
-                float4 vertex : SV_POSITION;
-            };
-
-            sampler2D _MainTex;
-            float4 _MainTex_ST;
             float4 _MaskColor;
             float _Offset;
 
@@ -95,7 +52,7 @@
             fixed4 frag (v2f i) : SV_Target
             {
                 // sample the texture
-                fixed4 col = _MaskColor;
+                fixed4 col = tex2D(_MainTex, i.uv);
 
                 // 振幅（控制波浪顶端和底端的高度）
                 float amplitude = 0.05;
@@ -116,8 +73,10 @@
                 // y = Asin(ωx ± φt) + k
                 float y = amplitude * sin((angularVelocity * i.uv.x) + initialPhase) + offset;
                 
-                // 丢弃 y 值以上的像素（左下角为原点 [0.0, 0.0]）
-                if (i.uv.y < y) discard;
+                // 大于y的叠加mask color
+                if (i.uv.y > y) {
+                    col *= _MaskColor;
+                }
 
                 return col;
             }
