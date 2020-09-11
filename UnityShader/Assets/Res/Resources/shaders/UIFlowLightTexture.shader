@@ -77,6 +77,8 @@ Shader "Custom/UI/Flowlight-Texture"
                 fixed4 color    : COLOR;
                 float2 texcoord  : TEXCOORD0;
                 float4 worldPosition : TEXCOORD1;
+                // float2 flowLightUV : TEXCOORD2;
+                // float2 maskUV : TEXCOORD3;
                 UNITY_VERTEX_OUTPUT_STEREO
             };
 
@@ -85,6 +87,12 @@ Shader "Custom/UI/Flowlight-Texture"
             fixed4 _TextureSampleAdd;
             float4 _ClipRect;
             float4 _MainTex_ST;
+
+            // sampler2D _FlowLightTex;
+            // float4 _FlowLightTex_ST;
+            // sampler2D _MaskTex;
+            // float4 _MaskTex_ST;
+            // float _Speed;
 
             v2f vert(appdata_t v)
             {
@@ -95,6 +103,11 @@ Shader "Custom/UI/Flowlight-Texture"
                 OUT.vertex = UnityObjectToClipPos(OUT.worldPosition);
 
                 OUT.texcoord = TRANSFORM_TEX(v.texcoord, _MainTex);
+
+                // OUT.flowLightUV = TRANSFORM_TEX(v.texcoord, _FlowLightTex);
+                // OUT.maskUV = TRANSFORM_TEX(v.texcoord, _MaskTex);
+                // //mask uv 流动
+                // OUT.flowLightUV = OUT.flowLightUV - float2(_Speed,0) * _Time.x + float2(_Speed,0);
 
                 OUT.color = v.color * _Color;
                 return OUT;
@@ -112,6 +125,14 @@ Shader "Custom/UI/Flowlight-Texture"
                 clip (color.a - 0.001);
                 #endif
 
+                //流动UV采样
+                // half4 flowLightColor = tex2D(_FlowLightTex, IN.flowLightUV);
+                // half4 mask = tex2D(_MaskTex, IN.maskUV);
+                // flowLightColor.a *= mask.r;
+                // if(flowLightColor.a > 0)
+                // {
+                //     color.rgb *= flowLightColor.rgb;
+                // }
                 return color;
             }
         ENDCG
