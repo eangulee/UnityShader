@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SurfaceShader
+  m_Name: surfaceShader
   m_Shader: {fileID: 4800000, guid: 4b6682187a7038242bb44833568cf99b, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
