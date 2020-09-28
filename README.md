@@ -50,6 +50,14 @@
 
 ![image](https://github.com/eangulee/UnityShader/blob/master/UnityShader/imgs/%E5%8D%A1%E9%80%9A%E6%8F%8F%E8%BE%B9_Toon.png)
 
+### UV动画
+
+![image](https://github.com/eangulee/UnityShader/blob/master/UnityShader/imgs/UV%E5%8A%A8%E7%94%BB.gif)
+
+### 玻璃瓶流体效果
+
+![image](https://github.com/eangulee/UnityShader/blob/master/UnityShader/imgs/%E7%8E%BB%E7%92%83%E7%93%B6%E6%B5%81%E4%BD%93%E6%95%88%E6%9E%9C.gif)
+
 ### 平面外框线
 
 ![image](https://github.com/eangulee/UnityShader/blob/master/UnityShader/imgs/%E5%B9%B3%E9%9D%A2%E5%A4%96%E6%A1%86%E7%BA%BF.png)
