@@ -74,8 +74,8 @@ Shader "Custom/OutLighting"  //Shader文件索引路径
                 // 法线
                 o.normal = v.normal;
                 // 世界坐标顶点位置
-                o.worldvertpos = mul(unity_ObjectToWorld, v.vertex).xyz;
-                // 纹理
+                // o.worldvertpos = mul(unity_ObjectToWorld, v.vertex).xyz;
+                // 纹理uv
                 o.texcoord = TRANSFORM_TEX(v.texcoord, _MainTex);
                 return o;
             }
@@ -91,7 +91,7 @@ Shader "Custom/OutLighting"  //Shader文件索引路径
                 //color0.a = _outlightpow*(1 - dot(viewdir, i.normal));
                 //color.rgb = lerp(color.rgb, color0.rgb, color0.a);
                 // 纹理贴图叠加颜色
-                return color*_Color;
+                return color * _Color;
             }
             ENDCG
         }
