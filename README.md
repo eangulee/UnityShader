@@ -1,4 +1,4 @@
-## 效果说明
+﻿## 效果说明
 
 无法显示图片的参考[完美解决github访问速度慢、图片无法显示问题](https://www.jianshu.com/p/58c4a3edb668)
 
@@ -73,6 +73,11 @@
 ### 自定义深度图（支持透明物体）
 
 ![image](https://github.com/eangulee/UnityShader/blob/master/UnityShader/imgs/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B7%B1%E5%BA%A6%E5%9B%BE%EF%BC%88%E6%94%AF%E6%8C%81%E9%80%8F%E6%98%8E%E7%89%A9%E4%BD%93%EF%BC%89.png)
+
+
+### ColorMask
+![image](https://github.com/eangulee/UnityShader/blob/master/UnityShader/imgs/ColorMask.png)
+
 
 ### 相机变形.gif
 
