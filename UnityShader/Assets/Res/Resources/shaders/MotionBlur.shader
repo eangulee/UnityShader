@@ -88,7 +88,7 @@
             ENDCG
         }
             
-        //该pass似乎没有什么用处，渲染了一个Alpha的值
+        //该pass渲染了一个Alpha的值，用于blend
         Pass {
             Blend One Zero//似乎等于自己 源颜色*1 + 目标颜色*0 = 源颜色
             ColorMask A
